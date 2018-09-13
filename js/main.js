@@ -69,12 +69,12 @@ $(document).ready(function(){
 
   // Initialize Firebase
   var config = {
-    apiKey: "",
-    authDomain: "",
-    databaseURL: "",
-    projectId: "",
-    storageBucket: " ",
-    messagingSenderId: " "
+    apiKey: "AIzaSyCVcYfP9lLkcv481GQdGd3ovU-ilcFNUic",
+    authDomain: "bc-photo-v2.firebaseapp.com",
+    databaseURL: "https://bc-photo-v2.firebaseio.com",
+    projectId: "bc-photo-v2",
+    storageBucket: "bc-photo-v2.appspot.com",
+    messagingSenderId: "962479416892"
   };
   firebase.initializeApp(config);
 
