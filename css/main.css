@@ -1,0 +1,389 @@
+.menu-btn {
+  position: absolute;
+  z-index: 3;
+  right: 35px;
+  top: 35px;
+  cursor: pointer;
+  transition: all 0.5s ease-out; }
+  .menu-btn .btn-line {
+    width: 28px;
+    height: 3px;
+    margin: 0 0 5px 0;
+    background: #fff;
+    transition: all 0.5s ease-out; }
+  .menu-btn.close {
+    transform: rotate(180deg); }
+    .menu-btn.close .btn-line:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px); }
+    .menu-btn.close .btn-line:nth-child(2) {
+      opacity: 0; }
+    .menu-btn.close .btn-line:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -6px); }
+
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  opacity: 0.9;
+  visibility: hidden;
+  font-family: 'Rock Salt', cursive; }
+  .menu.show {
+    visibility: visible; }
+  .menu-branding, .menu-nav {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    width: 50%;
+    height: 100vh;
+    overflow: hidden; }
+  .menu-nav {
+    margin: 0;
+    padding: 0;
+    background: #ffab00;
+    list-style: none;
+    transform: translate3d(0, -100%, 0);
+    transition: all 0.5s ease-out; }
+    .menu-nav.show {
+      transform: translate3d(0, 0, 0); }
+  .menu-branding {
+    background: #ffe57f;
+    transform: translate3d(0, 100%, 0);
+    transition: all 0.5s ease-out; 
+    text-align: center}
+    .menu-branding.show {
+      transform: translate3d(0, 0, 0); }
+    .menu-branding .portrait {
+      width: 150px;
+      height: 150px; }
+  .menu .nav-item {
+    transform: translate3d(600px, 0, 0);
+    transition: all 0.5s ease-out; }
+    .menu .nav-item.show {
+      transform: translate3d(0, 0, 0); }
+  .menu .nav-link {
+    display: inline-block;
+    position: relative;
+    font-size: 30px;
+    text-transform: uppercase;
+    padding: 1rem 0;
+    font-weight: 300;
+    color: #000;
+    text-decoration: none;
+    transition: all 0.5s ease-out; }
+    .menu .nav-link:hover {
+      color: #e65100; }
+
+.nav-item:nth-child(1) {
+  transition-delay: 0.1s; }
+
+.nav-item:nth-child(2) {
+  transition-delay: 0.2s; }
+
+.nav-item:nth-child(3) {
+  transition-delay: 0.3s; }
+
+.nav-item:nth-child(4) {
+  transition-delay: 0.4s; }
+
+.nav-item:nth-child(5) {
+  transition-delay: 0.4s; }
+
+    h1{
+      font-family: 'Rock Salt', cursive;
+      text-shadow: 4px 4px 4px #e65100;
+      font-size: 4px;
+    }
+    h4{
+      font-family: 'Rock Salt', cursive;
+      font-size: 10px;
+    }
+    .section-sobre p{
+      font-family: 'Caveat Brush', cursive;
+      font-size: 25px;
+      text-align: justify;
+    }
+    .section-contact {
+      font-family: 'Caveat Brush', cursive;
+      font-size: 20px;
+    }
+    .section-contact h4{
+      font-size: 30px;
+    }
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%; }
+#main-footer {
+  text-align: center;
+  padding: 1rem;
+  background: #2b2b2b;
+  color: #fff;
+  height: 60px; }
+.circle{
+      margin: 5px 10px;
+}
+.circleNav{
+      width: 55px; height: 55px;
+} 
+img.pequena{
+      width: 300px; height: 300px;
+}
+.btn {
+      margin: 5px 10px;
+}
+.foto {
+      margin: 5px 10px;
+}
+.section-follow .fa-3x{
+    margin: 5px 10px;
+}
+section{
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+}
+section.section{
+  height: auto;
+}
+.swiper-container {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 500px;
+  height: 500px;
+}
+.imgBx img{
+  height: 350px;
+  width: 500px;
+}
+ul {
+ list-style-type: none;
+}
+/** ====================
+* Lista de Comentarios
+=======================*/
+.comments-container {
+  width: 660px;
+  font-family: 'Rock Salt', cursive;
+}
+.comments-list {
+ margin-top: 10px;
+ position: relative;
+}
+/**
+* Lineas / Detalles
+-----------------------*/
+.comments-list:before {
+ content: '';
+ width: 2px;
+ height: 100%;
+ background: #c7cacb;
+ position: absolute;
+ left: 32px;
+ top: 0;
+}
+.comments-list:after {
+ content: '';
+ position: absolute;
+ background: #c7cacb;
+ bottom: 0;
+ left: 27px;
+ width: 7px;
+ height: 7px;
+ border: 3px solid #dee1e3;
+ -webkit-border-radius: 50%;
+ -moz-border-radius: 50%;
+ border-radius: 50%;
+}
+.reply-list:before, .reply-list:after {display: none;}
+.reply-list li:before {
+ content: '';
+ width: 60px;
+ height: 2px;
+ background: #c7cacb;
+ position: absolute;
+ top: 25px;
+ left: -55px;
+}
+.comments-list li {
+ margin-bottom: 15px;
+ display: block;
+ position: relative;
+}
+.comments-list li:after {
+ content: '';
+ display: block;
+ clear: both;
+ height: 0;
+ width: 0;
+}
+/**
+* Avatar
+---------------------------*/
+.comments-list .comment-avatar {
+ width: 65px;
+ height: 65px;
+ position: relative;
+ z-index: 99;
+ float: left;
+ border: 3px solid #ffab00;
+ -webkit-border-radius: 4px;
+ -moz-border-radius: 4px;
+ border-radius: 4px;
+ -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+ -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+ box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+ overflow: hidden;
+}
+.comments-list .comment-avatar img {
+ width: 100%;
+ height: 100%;}
+.comment-main-level:after {
+ content: '';
+ width: 0;
+ height: 0;
+ display: block;
+ clear: both;
+}
+/**
+* Caja del Comentario
+---------------------------*/
+.comments-list .comment-box {
+ width: 580px;
+ float: right;
+ position: relative;
+ -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+ -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+ box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+ text-align: justify;
+}
+.comments-list .comment-box:before, .comments-list .comment-box:after {
+ content: '';
+ height: 0;
+ width: 0;
+ position: absolute;
+ display: block;
+ border-width: 10px 12px 10px 0;
+ border-style: solid;
+ border-color: transparent #FCFCFC;
+ top: 8px;
+ left: -11px;
+}
+.comments-list .comment-box:before {
+ border-width: 11px 13px 11px 0;
+ border-color: transparent rgba(0,0,0,0.05);
+ left: -12px;
+}
+.comment-box .comment-head {
+ background: #FCFCFC;
+ padding: 10px 12px;
+ border-bottom: 1px solid #E5E5E5;
+ overflow: hidden;
+ -webkit-border-radius: 4px 4px 0 0;
+ -moz-border-radius: 4px 4px 0 0;
+ border-radius: 4px 4px 0 0;
+}
+.comment-box .comment-name {
+ color: #ffab00;
+ font-size: 13px;
+ font-weight: 700;
+ float: left;
+ margin-right: 10px;
+}
+.comment-box .comment-head span {
+ float: left;
+ color: #999;
+ font-size: 10px;
+ position: relative;
+ top: 12px;
+}
+.comment-box .comment-content {
+ background: #FFF;
+ padding: 15px;
+ font-size: 15px;
+ color: #000;
+ -webkit-border-radius: 0 0 4px 4px;
+ -moz-border-radius: 0 0 4px 4px;
+ border-radius: 0 0 4px 4px;
+}
+
+/** =====================
+* Responsive
+========================*/
+@media screen and (min-width: 750px) and (max-width: 1200px) {
+  .comments-container {
+    width: 510px;}
+  .comments-list .comment-box {
+    width: 450px;}
+  .comment-box .comment-name {
+    font-size: 10px;}
+  .comment-box .comment-content{
+    font-size: 10px;}
+  .comments-list .comment-avatar{
+    width: 40px;
+    height: 40px;}
+  .comment-box .comment-head span {
+    font-size: 10px;
+    top: 8px;}}
+   
+@media screen and (max-width: 750px) {
+  section {
+    align-items: center;
+    text-align: center; }
+  ul.menu-nav,
+  div.menu-branding {
+    float: none;
+    width: 100%;
+    min-height: 0; }
+    ul.menu-nav.show,
+    div.menu-branding.show {
+      transform: translate3d(0, 0, 0); }
+  .menu-nav {
+    height: 75vh;
+    transform: translate3d(-100%, 0, 0);
+    font-size: 10px; }
+  .menu-nav .nav-item a{
+    font-size:  20px;
+  }
+  .menu-branding {
+    height: 25vh;
+    transform: translate3d(100%, 0, 0); 
+    font-family: 'Caveat Brush', cursive;
+    text-align: center}
+  .menu-branding .portrait {
+    width: 80px;
+    height: 80px;}
+  .menu-branding .displayName{
+    font-size: 22px;
+  }
+  .menu-branding .displayEmail{
+    font-size: 15px;
+  }
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 350px;
+    height: 300px;}
+  .comments-container {
+    width: 260px;}
+  .comments-list .comment-box {
+    width: 200px;}
+  .comment-box .comment-name {
+    font-size: 10px;}
+  .comment-box .comment-content{
+    font-size: 10px;}
+  .comments-list .comment-avatar{
+    width: 40px;
+    height: 40px;}
+  .comment-box .comment-head span {
+    font-size: 7px;
+    top: 1px;} 
+}
+
+    

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="./css/swiper.min.css">
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="icon" type="image/x-icon" href="./img/icono1.png">
+  <link href="https://fonts.googleapis.com/css?family=Caveat+Brush|Rock+Salt" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+    crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+  <title>Bc Photography</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125021345-1"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-125021345-1');
+  </script>
+</head>
+<body class="amber accent-4 scrollspy" id="inicio">
+  <header>
+    <div class="menu-btn">
+      <div class="btn-line"></div>
+      <div class="btn-line"></div>
+      <div class="btn-line"></div>
+    </div>
+
+    <nav class="menu">
+      <div class="menu-branding" id="menu-branding">
+                
+      </div>
+      <ul class="menu-nav">
+        <li class="nav-item">
+          <a href="#inicio" class="nav-link salirInicio">
+            Inicio
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#sobre" class="nav-link salirSobre">
+            Sobre Mi
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#album" class="nav-link salirAlbum">
+            Album
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#contacto" class="nav-link salirContacto">
+            Contacto
+          </a>
+        </li>
+        <li class="nav-item" id="login">
+          <a class="modal-trigger nav-link" href="#modal1">
+            Iniciar Sesion
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  
+  <div class="parallax-container">
+      <div class="parallax"><img src="./img/Atardecer-002-parallax.png"></div>
+  </div>
+  <section class="section scrollspy section-follow">
+    <div class="container row">
+      <h1 class="lg-heading">
+        Brangy
+        <span>Castro</span>
+      </h1>
+      <h4>
+        fotógrafo, Programador y Diseñador Web
+      </h4>
+      <div>
+        <a href="https://twitter.com/BrangyC" class="white-text" target="_blank">
+          <i class="fab fa-twitter fa-3x"></i>
+        </a>
+        <a href="https://www.facebook.com/BrangyC/" class="white-text" target="_blank">
+          <i class="fab fa-facebook fa-3x"></i>
+        </a>
+        <a href="https://www.instagram.com/bcphotography.18/" class="white-text" target="_blank">
+          <i class="fab fa-instagram fa-3x"></i>
+        </a>
+        <a href="https://plus.google.com/u/0/+CastroShark" class="white-text" target="_blank">
+          <i class="fab fa-google-plus fa-3x"></i>
+        </a>
+        <a href="https://plus.google.com/u/0/+CastroShark" class="white-text" target="_blank">
+          <i class="fab fa-github fa-3x"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+  <div class="parallax-container">
+      <div class="parallax"><img src="./img/galeria.006-parallax.png"></div>
+  </div>
+  <section class="section section-sobre scrollspy" id="sobre">
+    <div class="container">
+      <h1 class="lg-heading">
+        Sobre
+        <span class="text-secondary">Mi</span>
+      </h1>
+      <h4 class="sm-heading">     
+        Déjame contarte algunas cosas ...
+      </h4>
+      <div class="row">
+        <div class="col l5 s12">
+          <img src="./img/icono1.png" alt="Brangy Castro" class="circle">
+        </div>
+  
+        <div class="col l7 s12">
+          <h4 class="text-secondary">BIO</h4>
+          <p>Hola bienvenido a mí pagina, soy <span>Brangy Castro</span> un aficionado a la fotografía y a los atardeceres. 
+            Espero te guste mi trabajo y mis lugares favoritos para realizar mis fotos....</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="parallax-container">
+      <div class="parallax"><img src="./img/Atardecer-003-parallax.png"></div>
+  </div>
+  <section class="section scrollspy" id="album">
+    <div class="container row" id="albumInicio">
+      <h1 class="lg-heading">
+        <span class="text-secondary">Album</span>
+      </h1>
+      <h4 class="sm-heading">
+          Mira algunas de mis fotos...
+      </h4>
+      <div id="listarAlbum">
+      </div>
+    </div>
+    <div class="container row hide" id="fotos">
+      <!-- Swiper -->
+      <div class="swiper-container">
+        <div class="swiper-wrapper" id="swiper-wrapper">
+          
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+    <div>
+      <input type="hidden" id="uid">
+      <input type="hidden" id="perfil">
+    </div>
+  </section>
+  <div class="parallax-container">
+      <div class="parallax"><img src="./img/galeria.002.jpeg"></div>
+  </div>
+  <section class="section section-contact scrollspy" id="contacto">
+      <div class="container">
+          <div class="row">
+            <div class="col s12 m6">
+              <div class="card-panel amber black-text center">
+                <i class="material-icons">email</i>
+                <h4>Dejanos tus comentarios</h4>
+                <p>Ayudanos a mejor la pagina, dejanos tus sugerencias y opiniones acerca de nuestro sitio web.</p>
+              </div>
+              <ul class="collection with-header">
+                <li class="collection-header"><h4>Ubicación</h4></li>
+                <li class="collection-item">Bc Photography</li>
+                <li class="collection-item">Crucita Manabi Ecuador</li>
+                <li class="collection-item">0969499830</li>
+              </ul>
+            </div>
+            <form class="col s12 m6">
+                <div class="card-panel grey lighten-3">
+                    <h4>Por favor, llene este formulario</h4>
+                    <div class="input-field">
+                      <i class="material-icons prefix amber-text">account_circle</i>
+                      <input type="text" id="nombre" class="validate" 
+                      name="nombre" placeholder="Nombre">
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix amber-text">email</i>
+                        <input type="email" id="email" class="validate" 
+                        name="correo" placeholder="Correo">
+                        <span class="helper-text" data-error="error"></span>
+                      </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix amber-text">phone</i>
+                        <input type="tel" id="telefono" class="validate" 
+                         placeholder="Telefono" name="numpiso" onkeypress="return valida(event)"
+                         maxlength="10">
+                    </div>
+                    <div class="input-field">
+                      <i class="material-icons prefix amber-text">chat</i>
+                      <textarea type="text" id="mensaje" class="materialize-textarea validate" 
+                      name="mensaje" data-length="50" placeholder="Ingrese su comentario"></textarea>
+                    </div>
+                    <button type="button" class="btn amber waves-effect waves-light black-text" onclick="ingresarMensaje()">Enviar <i class="material-icons right black-text">send</i></button>
+                  </div>
+            </form>
+          </div>
+        </div>
+  </section>
+  <footer id="main-footer" class="amber accent-4 black-text">
+      Derechos reservados para Bc Photography Copyright &copy; 2018
+  </footer>
+
+  <div id="modal1" class="modal">
+      <div class="modal-content">
+        <h4>Iniciar Sesion</h4>
+          <ul class="center boton">
+            <li><a class="btn red" onclick="ingresoGoogle()"><i class="fab fa-google-plus"></i> | Sign in whith Google</a></li>
+            <li><a class="btn indigo darken-4" onclick="ingresoFacebook()"><i class="fab fa-facebook-f"></i> | Sign in whith Facebook</a></li>
+          </ul>
+      </div>
+  </div>
+
+  <div class="fixed-action-btn hide" id="flotante">
+    <a class="btn-floating btn-large amber accent-4"
+    onclick="regresar()">
+      <i class="large material-icons black-text">arrow_back</i>
+    </a>
+  </div>
+
+  <div id="modalComentario" class="modal modal-fixed-footer">
+    <div class="modal-content" > 
+      <div class="comments-container" id="comentario">
+          <ul id="comments-list" class="comments-list">
+      
+          </ul> 
+      </div>
+    </div>
+    <div class="modal-footer">
+        <div class="row">
+          <div class="col s10 m10 l10">
+              <textarea id="textarea" class="materialize-textarea" data-length="120" placeholder="Comentario"></textarea>
+          </div>
+          <div class="col s2 m2 l2">
+              <a class="btn-flat waves-effect waves-green left" onclick="comentario()"><i class="material-icons amber-text">send</i></a>
+          </div>
+        </div>  
+    </div>
+  </div>
+
+  <script src="./js/swiper.min.js"></script>
+  <script src="./js/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+</body>
+
+</html>
