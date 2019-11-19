@@ -69,12 +69,13 @@ $(document).ready(function(){
 
   // Initialize Firebase
   var config = {
-    apiKey: "",
-    authDomain: "",
-    databaseURL: "",
-    projectId: "",
-    storageBucket: " ",
-    messagingSenderId: " "
+    apiKey: "AIzaSyCVcYfP9lLkcv481GQdGd3ovU-ilcFNUic",
+    authDomain: "bc-photo-v2.firebaseapp.com",
+    databaseURL: "https://bc-photo-v2.firebaseio.com",
+    projectId: "bc-photo-v2",
+    storageBucket: "bc-photo-v2.appspot.com",
+    messagingSenderId: "962479416892",
+    appId: "1:962479416892:web:1fa260eb56e9e06d794539"
   };
   firebase.initializeApp(config);
 
@@ -141,7 +142,7 @@ $(document).ready(function(){
 
 // INICIAR SESION CON GOOGLE
 //---------------------------------------
-/*function ingresoGoogle(){
+function ingresoGoogle(){
   if(!firebase.auth().currentUser){
     var provider = new firebase.auth.GoogleAuthProvider();
     provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
@@ -162,10 +163,10 @@ $(document).ready(function(){
   }else{
     firebase.auth().signOut();
   }
-}*/
+}
 // INICIAR SESION CON FACEBOOK
 //---------------------------------------
-/*function ingresoFacebook(){
+function ingresoFacebook(){
       if(!firebase.auth().currentUser){
         var provider = new firebase.auth.FacebookAuthProvider();
         provider.addScope('public_profile');
@@ -191,10 +192,10 @@ $(document).ready(function(){
        }
         
     }
-}*/
+}
 // OBSERVAR QUEIN ESTA CONECTADO
 //---------------------------------------
-/*function observador(){
+function observador(){
   var sesion = document.getElementById('menu-branding');
 
     firebase.auth().onAuthStateChanged(function(user){
@@ -241,30 +242,12 @@ function cerrarSesion(){
   .catch(function(error){
       console.log(error);
   });
-}*/
+}
 
 function cargarPortafolio(){
   var lista = document.getElementById('listarAlbum');
   
-  db.collection("portafolio").onSnapshot((querySnapshot) => {
-              querySnapshot.forEach((doc) => {
-                  lista.innerHTML += `
-                          <div class="col s12 m4">
-                              <div class="card">
-                              <div class="card-image">
-                                  <img src="${doc.data().url}">
-                                  <span class="card-title">${doc.id}</span>
-                              </div>
-                              <div class="card-action">
-                                  <a onclick=listarFotos("${doc.id}")>Ver...</a>
-                              </div>
-                              </div>
-                          </div>
-                  `
-              });
-          });  
-  
-  /*firebase.auth().onAuthStateChanged(function(user){
+  firebase.auth().onAuthStateChanged(function(user){
       lista.innerHTML = "";
       if(!user){         
               lista.innerHTML = `
@@ -290,7 +273,7 @@ function cargarPortafolio(){
               });
           });  
       }
-  });*/
+  });
 }
 
 function listarFotos(ubicacion){
