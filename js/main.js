@@ -141,7 +141,7 @@ $(document).ready(function(){
 
 // INICIAR SESION CON GOOGLE
 //---------------------------------------
-function ingresoGoogle(){
+/*function ingresoGoogle(){
   if(!firebase.auth().currentUser){
     var provider = new firebase.auth.GoogleAuthProvider();
     provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
@@ -162,10 +162,10 @@ function ingresoGoogle(){
   }else{
     firebase.auth().signOut();
   }
-}
+}*/
 // INICIAR SESION CON FACEBOOK
 //---------------------------------------
-function ingresoFacebook(){
+/*function ingresoFacebook(){
       if(!firebase.auth().currentUser){
         var provider = new firebase.auth.FacebookAuthProvider();
         provider.addScope('public_profile');
@@ -191,10 +191,10 @@ function ingresoFacebook(){
        }
         
     }
-}
+}*/
 // OBSERVAR QUEIN ESTA CONECTADO
 //---------------------------------------
-function observador(){
+/*function observador(){
   var sesion = document.getElementById('menu-branding');
 
     firebase.auth().onAuthStateChanged(function(user){
@@ -241,11 +241,30 @@ function cerrarSesion(){
   .catch(function(error){
       console.log(error);
   });
-}
+}*/
 
 function cargarPortafolio(){
   var lista = document.getElementById('listarAlbum');
-  firebase.auth().onAuthStateChanged(function(user){
+  
+  db.collection("portafolio").onSnapshot((querySnapshot) => {
+              querySnapshot.forEach((doc) => {
+                  lista.innerHTML += `
+                          <div class="col s12 m4">
+                              <div class="card">
+                              <div class="card-image">
+                                  <img src="${doc.data().url}">
+                                  <span class="card-title">${doc.id}</span>
+                              </div>
+                              <div class="card-action">
+                                  <a onclick=listarFotos("${doc.id}")>Ver...</a>
+                              </div>
+                              </div>
+                          </div>
+                  `
+              });
+          });  
+  
+  /*firebase.auth().onAuthStateChanged(function(user){
       lista.innerHTML = "";
       if(!user){         
               lista.innerHTML = `
@@ -271,7 +290,7 @@ function cargarPortafolio(){
               });
           });  
       }
-  });
+  });*/
 }
 
 function listarFotos(ubicacion){
